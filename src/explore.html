@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<!-- saved from url=(0051)https://mathvista.github.io/visualizer/explore.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore</title>
+    <!-- <link rel="icon" href="img/logo.png" type="image/icon type"> -->
+
+    <link rel="stylesheet" href="./pure-min.css" integrity="sha384-yHIFVG6ClnONEA5yB5DJXfW2/KC173DIQrYoZMEtBvGzmf0PKiGyNEqe9N6BNDBH" crossorigin="anonymous">
+    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="./nav.css">
+    <link rel="stylesheet" href="./explore.css">
+
+    <script src="./underscore-umd-min.js.Download"></script>
+    <script src="./explore.js.Download" defer=""></script>
+</head>
+
+<body>
+    <div id="nav">
+        <div id="icon">
+            <!-- <img src="img/logo.png" id="nav-icon"> -->
+            <a class="nav-button" href="https://mathvista.github.io/" style="margin-left: 2px; font-size: 24px">MathVista Visualizer
+            </a>
+        </div>
+        <!-- <div>
+            <a class="nav-button" href="index.html#home">Home</a>
+            <a class="nav-button" href="index.html#dataset">Dataset</a>
+            <a class="nav-button" href="index.html#download">Download</a>
+            <a class="nav-button" href="index.html#method">Method</a>
+            <a class="nav-button" href="index.html#paper">Paper</a>
+            <a class="nav-button" href="index.html#code">Code</a>
+            <a class="nav-button" href="index.html#citation">Citation</a>
+            <a class="nav-button" href="index.html#authors">Authors</a>
+            <a class="nav-button" href="index.html#contact">Contact</a>
+            <a class="nav-button" href="leaderboard.html">Leaderboard</a>
+            <a class="nav-button" href="explore.html">Explore</a>
+            <a class="nav-button" href="visualize.html">Visualize</a>
+        </div> -->
+    </div>
+
+    <button class="optionsbtn">☰</button>
+    <div class="row">
+        <div id="option-panel" class="left">
+            <a href="javascript:void(0)" class="closebtn">×</a>
+            <h3 class="opttitle">Sample Filters</h3>
+            <div class="optbox"><label class="dd-label">How many samples? <select id="number_dd" class="opt-dd"> <option value="20" selected=""> 20 </option><option value="50"> 50 </option><option value="100"> 100 </option><option value="200"> 200 </option> </select> </label><br><label class="dd-label">Choose a split: <select id="split_dd" class="opt-dd"> <option value="All" selected=""> All </option><option value="testmini (1000)"> testmini (1000) </option><option value="test (5141)"> test (5141) </option> </select> </label><br><label class="dd-label">Choose a question type: <select id="question_type_dd" class="opt-dd"> <option value="All" selected=""> All </option><option value="free_form (2749)"> free_form (2749) </option><option value="multi_choice (3392)"> multi_choice (3392) </option> </select> </label><br><label class="dd-label">Choose an answer type: <select id="answer_type_dd" class="opt-dd"> <option value="All" selected=""> All </option><option value="text (3392)"> text (3392) </option><option value="integer (2461)"> integer (2461) </option><option value="float (272)"> float (272) </option><option value="list (16)"> list (16) </option> </select> </label><br><label class="dd-label">Choose a language: <select id="language_dd" class="opt-dd"> <option value="All" selected=""> All </option><option value="english (5737)"> english (5737) </option><option value="chinese (400)"> chinese (400) </option><option value="persian (4)"> persian (4) </option> </select> </label><br><label class="dd-label">Choose a source dataset: <select id="source-dd" class="opt-dd"> <option value="All" selected=""> All </option><option value="A-OKVQA (16)"> A-OKVQA (16) </option><option value="AI2D (267)"> AI2D (267) </option><option value="CLEVR-Math (400)"> CLEVR-Math (400) </option><option value="ChartQA (317)"> ChartQA (317) </option><option value="DVQA (400)"> DVQA (400) </option><option value="DocVQA (59)"> DocVQA (59) </option><option value="FigureQA (400)"> FigureQA (400) </option><option value="FunctionQA (400)"> FunctionQA (400) </option><option value="GEOS (119)"> GEOS (119) </option><option value="GeoQA+ (400)"> GeoQA+ (400) </option><option value="Geometry3K (400)"> Geometry3K (400) </option><option value="IQTest (228)"> IQTest (228) </option><option value="IconQA (400)"> IconQA (400) </option><option value="KVQA (382)"> KVQA (382) </option><option value="MapQA (30)"> MapQA (30) </option><option value="PMC-VQA (2)"> PMC-VQA (2) </option><option value="PaperQA (108)"> PaperQA (108) </option><option value="ParsVQA-Caps (4)"> ParsVQA-Caps (4) </option><option value="PlotQA (105)"> PlotQA (105) </option><option value="SciBench (94)"> SciBench (94) </option><option value="ScienceQA (38)"> ScienceQA (38) </option><option value="Super-CLEVR (400)"> Super-CLEVR (400) </option><option value="TQA (85)"> TQA (85) </option><option value="TabMWP (400)"> TabMWP (400) </option><option value="TextVQA (14)"> TextVQA (14) </option><option value="TheoremQA (53)"> TheoremQA (53) </option><option value="UniGeo (400)"> UniGeo (400) </option><option value="VQA-AS (26)"> VQA-AS (26) </option><option value="VQA-RAD (4)"> VQA-RAD (4) </option><option value="VQA2.0 (188)"> VQA2.0 (188) </option><option value="VizWiz (2)"> VizWiz (2) </option> </select> </label><br><label class="dd-label">Choose a category: <select id="category_dd" class="opt-dd"> <option value="All" selected=""> All </option><option value="math-targeted-vqa (3402)"> math-targeted-vqa (3402) </option><option value="general-vqa (2739)"> general-vqa (2739) </option> </select> </label><br><label class="dd-label">Choose a task: <select id="task_dd" class="opt-dd"> <option value="All" selected=""> All </option><option value="figure question answering (1647)"> figure question answering (1647) </option><option value="geometry problem solving (1319)"> geometry problem solving (1319) </option><option value="math word problem (1200)"> math word problem (1200) </option><option value="textbook question answering (937)"> textbook question answering (937) </option><option value="visual question answering (1038)"> visual question answering (1038) </option> </select> </label><br><label class="dd-label">Choose a context: <select id="context_dd" class="opt-dd"> <option value="All" selected=""> All </option><option value="abstract scene (375)"> abstract scene (375) </option><option value="bar chart (781)"> bar chart (781) </option><option value="document image (59)"> document image (59) </option><option value="function plot (400)"> function plot (400) </option><option value="geometry diagram (1370)"> geometry diagram (1370) </option><option value="heatmap chart (1)"> heatmap chart (1) </option><option value="line plot (202)"> line plot (202) </option><option value="map chart (30)"> map chart (30) </option><option value="medical image (6)"> medical image (6) </option><option value="natural image (615)"> natural image (615) </option><option value="pie chart (97)"> pie chart (97) </option><option value="puzzle test (226)"> puzzle test (226) </option><option value="radar chart (4)"> radar chart (4) </option><option value="scatter plot (205)"> scatter plot (205) </option><option value="scientific figure (518)"> scientific figure (518) </option><option value="synthetic scene (800)"> synthetic scene (800) </option><option value="table (450)"> table (450) </option><option value="violin plot (1)"> violin plot (1) </option><option value="word cloud (1)"> word cloud (1) </option> </select> </label><br><label class="dd-label">Choose a grade: <select id="grade_dd" class="opt-dd"> <option value="All" selected=""> All </option><option value="elementary school (1272)"> elementary school (1272) </option><option value="high school (1895)"> high school (1895) </option><option value="college (661)"> college (661) </option><option value="not applicable (2313)"> not applicable (2313) </option> </select> </label><br><label class="dd-label">Choose a skill: <select id="skill_dd" class="opt-dd"> <option value="All" selected=""> All </option><option value="algebraic reasoning (1748)"> algebraic reasoning (1748) </option><option value="arithmetic reasoning (2093)"> arithmetic reasoning (2093) </option><option value="geometry reasoning (1429)"> geometry reasoning (1429) </option><option value="logical reasoning (231)"> logical reasoning (231) </option><option value="numeric commonsense (858)"> numeric commonsense (858) </option><option value="scientific reasoning (655)"> scientific reasoning (655) </option><option value="statistical reasoning (1870)"> statistical reasoning (1870) </option> </select> </label><br></div>
+            <button type="button" class="pure-button pure-button-primary" id="filter-submit">Refresh data!</button>
+        </div>
+        <div id="display">
+            <!-- <br><br> -->
+            <!-- <h1>ScienceQA (Science Question Answering)</h1> -->
+            <br><br>
+            <div id="content-body"><div class="display-col"> 
+        <div class="box "> 
+            
+                <p><b>Question </b></p>
+                <p class="question-txt">[No.4944] Figure Q8 shows the contour of an object. Represent it with an 8-directional chain code. Represent the answer as a list with each digit as a element.</p>
+         <img src="./4944.jpg" alt="number image" class="question-img">  
+        </div>
+    <hr>
+        <div class="box "> 
+            
+                <p><b>Question </b></p>
+                <p class="question-txt">[No.2063] Is (x, f(x)) a global optimum?</p>
+         <img src="./2063.jpg" alt="number image" class="question-img"> <p><b>Choices </b></p><div class="choices"><p class="choice-txt">Yes</p><p class="choice-txt">No</p></div> 
+        </div>
+    <hr>
+        <div class="box "> 
+            
+                <p><b>Question </b></p>
+                <p class="question-txt">[No.3289] Find $\iint_S \mathbf{F} \cdot \mathbf{n} d S$, where $\mathbf{F}(x, y, z)=x \mathbf{i}+y \mathbf{j}+z \mathbf{k}$ and $S$ is the outwardly oriented surface shown in the figure (the boundary surface of a cube with a unit corner cube removed).</p>
+         <img src="./3289.jpg" alt="number image" class="question-img">  
+        </div>
+    <hr>
+        <div class="box "> 
+            
+                <p><b>Question </b></p>
+                <p class="question-txt">[No.5359] What is the difference between two consecutive major ticks on the Y-axis ?</p>
+         <img src="./5359.jpg" alt="number image" class="question-img">  
+        </div>
+    <hr>
+        <div class="box "> 
+            
+                <p><b>Question </b></p>
+                <p class="question-txt">[No.509] Is Cadet Blue the high median?</p>
+         <img src="./509.jpg" alt="number image" class="question-img"> <p><b>Choices </b></p><div class="choices"><p class="choice-txt">yes</p><p class="choice-txt">no</p></div> <p><b>Answer </b></p><p class="answer-txt">yes</p>
+        </div>
+    <hr>
+        <div class="box "> 
+            
+                <p><b>Question </b></p>
+                <p class="question-txt">[No.4574] What is the minimum value of x?</p>
+         <img src="./4574.jpg" alt="number image" class="question-img">  
+        </div>
+    <hr>
+        <div class="box "> 
+            
+                <p><b>Question </b></p>
+                <p class="question-txt">[No.2229] Subtract all tiny yellow rubber spheres. Subtract all rubber spheres. How many objects are left?</p>
+         <img src="./2229.jpg" alt="number image" class="question-img">  
+        </div>
+    <hr>
+        <div class="box "> 
+            
+                <p><b>Question </b></p>
+                <p class="question-txt">[No.5214] Is the function continuous in the interval [0, 2]?</p>
+         <img src="./5214.jpg" alt="number image" class="question-img"> <p><b>Choices </b></p><div class="choices"><p class="choice-txt">Yes</p><p class="choice-txt">No</p></div> 
+        </div>
+    <hr>
+        <div class="box "> 
+            
+                <p><b>Question </b></p>
+                <p class="question-txt">[No.5758] Does the sky fill up more than half of this image?</p>
+         <img src="./5758.jpg" alt="number image" class="question-img"> <p><b>Choices </b></p><div class="choices"><p class="choice-txt">Yes</p><p class="choice-txt">No</p></div> 
+        </div>
+    <hr>
+        <div class="box "> 
+            
+                <p><b>Question </b></p>
+                <p class="question-txt">[No.2774] Is the median of China in the graph greater than the median of the Angola graph?</p>
+         <img src="./2774.jpg" alt="number image" class="question-img"> <p><b>Choices </b></p><div class="choices"><p class="choice-txt">Yes</p><p class="choice-txt">No</p></div> 
+        </div>
+    <hr> </div><div class="display-col"> 
+        <div class="box "> 
+            
+                <p><b>Question </b></p>
+                <p class="question-txt">[No.420] What is the lowest value on the Y axis?</p>
+         <img src="./420.jpg" alt="number image" class="question-img">  <p><b>Answer </b></p><p class="answer-txt">0.0</p>
+        </div>
+    <hr>
+        <div class="box "> 
+            
+                <p><b>Question </b></p>
+                <p class="question-txt">[No.2221] An architecture student measured the heights of all the buildings downtown. How many buildings are less than 100 meters tall? (Unit: buildings)</p>
+         <img src="./2221.jpg" alt="number image" class="question-img">  
+        </div>
+    <hr>
+        <div class="box "> 
+            
+                <p><b>Question </b></p>
+                <p class="question-txt">[No.1890] The passage below describes an experiment. Read the passage and then follow the instructions below.
+
+Edwin poured 30 milliliters of water into each of six measuring cups. He poured the same volume of apple juice into another six measuring cups. He kept the measuring cups in a freezer for 48 hours. Edwin then observed the frozen liquids' volumes in the measuring cups. He measured the amount the volumes increased to see how much the liquids had expanded while freezing. He compared how much the water expanded to how much the apple juice expanded.
+Figure: water in a measuring cup. Identify the question that Edwin's experiment can best answer.</p>
+         <img src="./1890.jpg" alt="number image" class="question-img"> <p><b>Choices </b></p><div class="choices-vertical"><p class="choice-txt">Does apple juice expand more or less than water when it freezes?</p><p class="choice-txt">Does water freeze more quickly than apple juice?</p></div> 
+        </div>
+    <hr>
+        <div class="box "> 
+            
+                <p><b>Question </b></p>
+                <p class="question-txt">[No.6027] Find $K J$ if $G J=8, G H=12,$ and $H I=4$</p>
+         <img src="./6027.jpg" alt="number image" class="question-img"> <p><b>Choices </b></p><div class="choices"><p class="choice-txt">2</p><p class="choice-txt">4</p><p class="choice-txt">6</p><p class="choice-txt">8</p></div> 
+        </div>
+    <hr>
+        <div class="box "> 
+            
+                <p><b>Question </b></p>
+                <p class="question-txt">[No.737] Find the perimeter of the parallelogram.</p>
+         <img src="./737.jpg" alt="number image" class="question-img"> <p><b>Choices </b></p><div class="choices"><p class="choice-txt">32</p><p class="choice-txt">39</p><p class="choice-txt">46</p><p class="choice-txt">78</p></div> <p><b>Answer </b></p><p class="answer-txt">78</p>
+        </div>
+    <hr>
+        <div class="box "> 
+            
+                <p><b>Question </b></p>
+                <p class="question-txt">[No.5206] As shown in the figure, in the diamond ABCD, AB = 15.0, ∠ADC = 120.0, then the distance between the two points B and D is ()</p>
+         <img src="./5206.jpg" alt="number image" class="question-img"> <p><b>Choices </b></p><div class="choices"><p class="choice-txt">15</p><p class="choice-txt">\frac{15}{2}√{3}</p><p class="choice-txt">7.5</p><p class="choice-txt">15√{3}</p></div> 
+        </div>
+    <hr>
+        <div class="box "> 
+            
+                <p><b>Question </b></p>
+                <p class="question-txt">[No.6115] What is the age gap between these two people in image? (unit: years)</p>
+         <img src="./6115.jpg" alt="number image" class="question-img">  
+        </div>
+    <hr>
+        <div class="box "> 
+            
+                <p><b>Question </b></p>
+                <p class="question-txt">[No.678] Find x</p>
+         <img src="./678.jpg" alt="number image" class="question-img"> <p><b>Choices </b></p><div class="choices"><p class="choice-txt">21</p><p class="choice-txt">34</p><p class="choice-txt">58</p><p class="choice-txt">67</p></div> <p><b>Answer </b></p><p class="answer-txt">58</p>
+        </div>
+    <hr>
+        <div class="box "> 
+            
+                <p><b>Question </b></p>
+                <p class="question-txt">[No.134] People can use the engineering-design process to develop solutions to problems. One step in the process is testing if a potential solution meets the requirements of the design.
+The passage below describes how the engineering-design process was used to test a solution to a problem. Read the passage. Then answer the question below.
+
+Cooper was a landscape architect who was hired to design a new city park. The city council wanted the park to have space for outdoor concerts and to have at least 20% of the park shaded by trees. Cooper thought the concert area should be at least 150 meters from the road so traffic noise didn't interrupt the music. He developed three possible designs for the park with the concert area in a different location in each design. Then, he tested each design by measuring the distance between the road and the concert area.
+Figure: studying an architect's design. Which of the following could Cooper's test show?</p>
+         <img src="./134.jpg" alt="number image" class="question-img"> <p><b>Choices </b></p><div class="choices-vertical"><p class="choice-txt">if at least 20% of the park would be shaded by trees in each design</p><p class="choice-txt">which design would have the least traffic noise in the concert area</p><p class="choice-txt">which design would have the greatest distance between the concert area and the road</p></div> <p><b>Answer </b></p><p class="answer-txt">which design would have the greatest distance between the concert area and the road</p>
+        </div>
+    <hr>
+        <div class="box "> 
+            
+                <p><b>Question </b></p>
+                <p class="question-txt">[No.3510] From the above food web diagram, if all fowls dies then eagles population</p>
+         <img src="./3510.jpg" alt="number image" class="question-img"> <p><b>Choices </b></p><div class="choices"><p class="choice-txt">increase</p><p class="choice-txt">decrease</p><p class="choice-txt">remains the same</p><p class="choice-txt">NA</p></div> 
+        </div>
+    <hr> </div></div>
+        </div>
+    </div>
+    <div id="dataset-import">
+
+    </div>
+
+
+<script src="./data_public.js.Download" type="text/javascript" async="false"></script></body></html>
